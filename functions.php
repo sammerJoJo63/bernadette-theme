@@ -199,3 +199,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+function shapeSpace_include_custom_jquery() {
+
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
+
+function script_enqueue() {
+	wp_enqueue_style( 'custom_style', get_template_directory_uri() . '/assets/css/custom.css', array(), '1.0' );
+	wp_enqueue_script( 'custom_script', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'script_enqueue' );

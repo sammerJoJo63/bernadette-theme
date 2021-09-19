@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+
+.site-title, .site-title a {
+	font-family: 'League Script', cursive;
+	font-size: 48px;
+}
+
+	#fishSwim {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 100%;
+	  height: 550px;
+	  position: relative;
+	  overflow: hidden; 
+	}
+	
+	.water {
+		width: 100% !important;
+		perspective: 300px;
+		bottom: 20px;
+		top: 100px;
+		width: 90%;
+		z-index: 0;
+		height: 350px;
+		position: relative;
+	}
+	
+	.mainfish {
+	  width: 90px;
+	  height: 50px;
+	  position: absolute;
+	  left: 50%;
+	  top: 50px;
+	  z-index: 9999999999999999999999999;
+	  animation: 5s ease circle infinite;
+	  transform: scale(2.8);
+	}
+	
+	.mainfish .body {
+	  background-color: red;
+	  width: 30px;
+	  height: 30px;
+	  position: absolute;
+	  border-radius: 50% 10px 50% 0;
+	  top: 0;
+	  right: 45%;
+	  transform: rotateZ(45deg);
+	  box-shadow: inset -4px -3px rgba(0,0,0,.1);
+	}
+	
+	.mainfish .tail {
+	  width: 0px;
+	  height: 0px;
+	  border-width: 15px 0 15px 20px;
+	  border-color: transparent red;
+	  border-style: solid;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	}
+	
+	.fish {
+	  width: 90px;
+	  height: 50px;
+	  position: absolute;
+	  opacity: 0.35;
+	  animation: 5s ease MoveUpDown infinite;
+	  right: -120%;
+	}
+		
+	.fish .body {
+	  background-color: #f03e3e;
+	  width: 30px;
+	  height: 30px;
+	  position: absolute;
+	  border-radius: 50% 0 50% 10px;
+	  top: 0;
+	  right: 25%;
+	  transform: rotateZ(45deg);
+	  box-shadow: inset -4px -3px rgba(0,0,0,.1);
+	}
+		
+	.fish .tail {
+	  width: 0px;
+	  height: 0px;
+	  border-width: 15px 20px 15px 0;
+	  border-color: transparent #f03e3e;
+	  border-style: solid;
+	  position: absolute;
+	  top: 0;
+	  right: 4px;
+	}
+	
+	@keyframes circle {
+	  0% {
+		transform: rotateY( -360deg) translateZ(100px) scale(1.5);
+	  }
+	   
+	  90%,100% {
+		transform: rotateY(0) translateZ(100px) scale(1.5);
+	  }
+	}
+	
+	@keyframes MoveUpDown {
+	0% {
+		right: -120%;
+	  }
+	  100% {
+		right: 120%;
+	  }
+	}
+	
+	div.lightbulb,
+	.mainfish input {
+	  position: absolute;
+	  appearance: none;
+	  -moz-appearance: none;
+	  -webkit-appearance: none;
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 50%;
+	  left: 50%;
+	  top: -52%;
+	  transform: translate(-50%, -50%);
+	  box-shadow: 0 0 0px 10px white;
+	  background: white;
+	  transition: all 0.5s ease-in-out;
+	  transform: scale(0.6);
+	}
+	
+	div.lightbulb::before {
+	  position: absolute;
+	  content: "";
+	  width: 30px;
+	  border-top: 17px solid white;
+	  border-left: 10px solid transparent;
+	  border-right: 10px solid transparent;
+	  left: -10px;
+	  top: 10px;
+	  transition: all 0.5s ease-in-out;
+	}
+	
+	div.lightbulb::after {
+	  position: absolute;
+	  content: "";
+	  width: 11px;
+	  height: 3px;
+	  background: grey;
+	  top: 30px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  border-radius: 15px;
+	  box-shadow: 0px 5px 0 0 grey, 0px 10px 0 0 grey;
+	}
+	
+	div.lightbulb+span::before {
+	  content: "";
+	  position: absolute;
+	  height: 3px;
+	  width: 7px;
+	  background: grey;
+	  top: 2px;
+	  left: 52%;
+	  transform: translateX(-50%);
+	  border-bottom-left-radius: 50px;
+	  border-bottom-right-radius: 50px;
+	  z-index: 1;
+	  transform: scale(0.6);
+	}
+	
+	.mainfish input, input:focus {
+		z-index: 1;
+	  outline: unset;
+		border: none;
+	}
+	
+	.mainfish input:checked {
+	  background: #ffe770;
+	  box-shadow: 0 0 0 10px #ffe770, 0 0 150px 10px #ffcd00;
+	  transition: all 0.5s ease-in-out;
+	}
+	
+	.mainfish input:checked + div.lightbulb::before {
+	  border-top-color: #ffe770;
+	  transition: all 0.5s ease-in-out;
+	}
+	
+	.navbar {
+		z-index: 9999;
+	}
+	
+	.wp-bp-jumbo-overlay {
+		padding: 0 !important;
+		background: black;
+	}
+	
+	.wp-bp-jumbo-overlay .container {
+		max-width: 100% !important;
+	}
+	
+	.fish .body.red,
+	.mainfish .body.red {
+		background-color: red;
+	}
+	
+	.fish .body.orange,
+	.mainfish .body.orange {
+		background-color: orange;
+	}
+	
+	.fish .body.yellow,
+	.mainfish .body.yellow {
+		background-color: yellow;
+	}
+	
+	.fish .body.green,
+	.mainfish .body.green {
+		background-color: green;
+	}
+	
+	.fish .body.lime,
+	.mainfish .body.lime {
+		background-color: lime;
+	}
+	
+	.fish .body.blue,
+	.mainfish .body.blue {
+		background-color: blue;
+	}
+	
+	.fish .body.lightblue,
+	.mainfish .body.lightblue {
+		background-color: lightblue;
+	}
+	
+	.fish .body.purple,
+	.mainfish .body.purple {
+		background-color: purple;
+	}
+	
+	.fish .body.lilac,
+	.mainfish .body.lilac {
+		background-color: mediumpurple;
+	}
+	
+	.fish .tail.red,
+	.mainfish .tail.red {
+		border-color: transparent red;
+	}
+	
+	.fish .tail.orange,
+	.mainfish .tail.orange {
+		border-color: transparent orange;
+	}
+	
+	.fish .tail.yellow,
+	.mainfish .tail.yellow {
+		border-color: transparent yellow;
+	}
+	
+	.fish .tail.green,
+	.mainfish .tail.green {
+		border-color: transparent green;
+	}
+	
+	.fish .tail.lime,
+	.mainfish .tail.lime {
+		border-color: transparent lime;
+	}
+	
+	.fish .tail.blue,
+	.mainfish .tail.blue {
+		border-color: transparent blue;
+	}
+	
+	.fish .tail.lightblue,
+	.mainfish .tail.lightblue {
+		border-color: transparent lightblue;
+	}
+	
+	.fish .tail.purple,
+	.mainfish .tail.purple {
+		border-color: transparent purple;
+	}
+	
+	.fish .tail.lilac,
+	.mainfish .tail.lilac {
+		border-color: transparent mediumpurple;
+	}
+	
+.site-title a::before {
+	content: "";
+	border-top: 1.5px solid #fff;
+	position: absolute;
+	width: 40px;
+	left:197px;
+	top:39.75px;
+	border-radius: 50%;
+	height: 1px;
+}

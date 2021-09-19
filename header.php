@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=1024">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -38,13 +38,13 @@
 		                <?php
 						endif;
 
-						if ( get_theme_mod( 'show_site_description', 1 ) ) {
-		                    $description = get_bloginfo( 'description', 'display' );
-		                    if ( $description || is_customize_preview() ) : ?>
-		                        <p class="site-description"><?php echo esc_html( $description ); ?></p>
-		                    <?php
-		                    endif;
-		                }
+						// if ( get_theme_mod( 'show_site_description', 1 ) ) {
+		                //     $description = get_bloginfo( 'description', 'display' );
+		                //     if ( $description || is_customize_preview() ) : ?>
+		                <!-- //        <p class="site-description"><?php //echo esc_html( $description ); ?></p> -->
+		                     <?php
+		                //     endif;
+		               // }
 					?>
 				</div>
 
